@@ -44,9 +44,9 @@ function maxProfit(prices: number[]): number {
 // console.log(maxProfit([7, 1, 5, 3, 6, 4]))
 // console.log(maxProfit([7, 6, 4, 3, 1, 4]))
 // console.log(maxProfit([2, 4, 1]))
-console.log(maxProfit1([3, 2, 6, 5, 0, 3]))
+console.log(maxProfit11([3, 2, 6, 5, 0, 3]))
 // 贪心 时间复杂度 O(n)，空间复杂度 O(1)
-function maxProfit1(prices: number[]): number {
+function maxProfit11(prices: number[]): number {
     if (isDecrease(prices)) return 0
     let max = 0
     let min = prices[0]
@@ -68,3 +68,5 @@ function maxProfit1(prices: number[]): number {
     }
     return max
 };
+
+
