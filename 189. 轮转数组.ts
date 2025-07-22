@@ -27,8 +27,8 @@ function rotate(nums: number[], k: number): void {
 
 };
 // rotate1([1, 2, 3, 4, 5, 6, 7], 3)
-// rotate1([-1, -100, 3, 99], 2)
-rotate1([1, 2, 3, 4], 7)
+rotate3([-1, -100, 3, 99], 2)
+// rotate3([1, 2, 3, 4], 7)
 function rotate1(nums: number[], k: number): void {
     // 如果k大于数组长度，则k取余数
     if (k >= nums.length) k = k % nums.length
@@ -37,3 +37,26 @@ function rotate1(nums: number[], k: number): void {
     nums.unshift(...temp)
     console.log(nums)
 };
+
+
+// 跟上面的方法有一些类似
+function rotate2(nums: number[], k: number): void {
+    // 如果k大于数组长度，则k取余数
+    if (k >= nums.length) k = k % nums.length
+    let len = nums.length - k
+    const temp = nums.splice(0, len)
+    nums.push(...temp)
+    console.log(nums, temp)
+};
+// 三次翻转法
+function rotate3(nums: number[], k: number): void {
+    const n = nums.length;
+    k %= n;
+    const rev = (l: number, r: number) => {
+        while (l < r) [nums[l++], nums[r--]] = [nums[r], nums[l]];
+    };
+    rev(0, n - 1);   // 整体翻转
+    rev(0, k - 1);   // 翻转前 k 个
+    rev(k, n - 1);   // 翻转剩余
+}
+
