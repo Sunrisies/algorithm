@@ -22,6 +22,18 @@
 function lengthOfLastWord(s: string): number {
     return s.trim().split(" ").at(-1)?.length!;
 };
-console.log(lengthOfLastWord("Hello World")); // 5
-console.log(lengthOfLastWord("   fly me   to   the moon  ")); // 4
-console.log(lengthOfLastWord("luffy is still joyboy")); // 6
+function lengthOfLastWord1(s: string): number {
+    // 1. 跳过尾部空格
+    s = s.trim()
+    let i = s.length - 1;
+    // 2. 计算最后一个单词长度
+    let len = 0;
+    while (i >= 0 && s[i] !== ' ') {
+        len++;
+        i--;
+    }
+    return len
+}
+// console.log(lengthOfLastWord1("Hello World")); // 5
+console.log(lengthOfLastWord1("   fly me   to   the moon  ")); // 4
+console.log(lengthOfLastWord1("luffy is still joyboy")); // 6
