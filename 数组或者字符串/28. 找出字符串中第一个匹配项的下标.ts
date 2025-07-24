@@ -19,7 +19,7 @@ function strStr(haystack: string, needle: string): number {
 };
 
 // console.log(strStr2("qsadbutsad", "sad")); // 0
-console.log(strStr2("leetcode", "leeto")); // -1
+console.log(strStr2("leetcode", "leeto")); // -1/
 
 //Sunday算法
 function strStr2(haystack: string, needle: string): number {
