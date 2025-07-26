@@ -32,5 +32,25 @@ function twoSum(numbers: number[], target: number): number[] {
     return result
 };
 // console.log(twoSum([2, 7, 11, 15], 9));
-// console.log(twoSum([2, 3, 4], 6));
-console.log(twoSum([-1, 0], -1));
+console.log(twoSum([2, 3, 4], 6));
+// console.log(twoSum2([-1, 0], -1));
+
+function twoSum2(numbers: number[], target: number): number[] {
+    let left = 0;
+    let right = numbers.length - 1;
+
+    while (left < right) {
+        const sum = numbers[left] + numbers[right];
+
+        if (sum === target) {
+            // 题目要求下标从1开始
+            return [left + 1, right + 1];
+        } else if (sum < target) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    // 根据题目描述，保证有解，所以这里不会执行
+    return [-1, -1];
+};
