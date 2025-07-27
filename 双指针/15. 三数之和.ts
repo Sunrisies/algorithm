@@ -62,9 +62,9 @@ function threeSum1(nums: number[]): number[][] {
                 left++;
                 right--;
             } else if (sum < 0) {
-                left++;
+                left++; // 移动左边
             } else {
-                right--;
+                right--; // 移动右边
             }
         }
     }
