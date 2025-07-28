@@ -35,9 +35,7 @@ class RandomizedSet {
     }
 
     remove(val: number): boolean {
-        console.log(val, this.map, this.map.get(val), '111---------')
         const ls = this.map.get(val)
-        console.log(ls, '11111', this.map)
         return this.map.get(val) === undefined ? false : this.map.delete(val) && true
     }
 
