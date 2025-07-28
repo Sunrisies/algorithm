@@ -24,6 +24,16 @@
 function reverseWords(s: string): string {
     return s.trim().split(" ").filter(item => item !== '').reverse().join(" ")
 };
-// console.log(reverseWords("the sky is blue")); // "blue is sky the"
+console.log(reverseWords("the sky is blue")); // "blue is sky the"
 // console.log(reverseWords("  hello world  ")); // "world hello"
-console.log(reverseWords("a good   example")); // "example good a"
+// console.log(reverseWords2("a good   example")); // "example good a"
+function reverseWords2(s: string): string {
+    let str: string[] = []
+    let temp = s.trim().split(" ")
+    for (let i = temp.length - 1; i >= 0; i--) {
+        if (temp[i] !== '') {
+            str.push(temp[i])
+        }
+    }
+    return str.join(" ")
+}
