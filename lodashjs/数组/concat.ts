@@ -1,3 +1,11 @@
+/**
+ * 
+ * @param array 数组
+ * @param values 要添加的值
+ * @returns 合并后的数组
+ */
+
+
 function concat(array: any[], ...values: any[]): any[] {
     return array.concat(...values);
 }

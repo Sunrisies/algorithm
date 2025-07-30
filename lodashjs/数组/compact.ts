@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param array 数组
+ * @returns 过滤后的数组
+ */
+
 function compact(array: any[]): any[] {
     return array.filter((item) => item)
 }

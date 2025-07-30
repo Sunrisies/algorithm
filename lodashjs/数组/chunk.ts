@@ -1,3 +1,10 @@
+/**
+ * 
+ * @param array 数组
+ * @param size 切片大小
+ * @returns 切片后的数组
+ */
+
 function chunk<T>(array: T[], size: number): T[][] {
     if (size <= 0) {
         return []
