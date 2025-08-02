@@ -27,7 +27,19 @@ function getRow(rowIndex: number): number[] {
     }
     return result[rowIndex] || [1]; // 如果 rowIndex 为 0，返回 [1]
 };
-console.log(getRow(0)); // [1,3,3,1]
+console.log(getRow(8)); // [1,3,3,1]
 // console.log(getRow(0)); // [1]
 // console.log(getRow(1)); // [1,1]
+function getRow2(rowIndex: number): number[] {
+    // 使用组合数公式 C(n,k) = C(n,k-1) * (n - k + 1) / k
+    const row: number[] = [1]; // 第一个元素总是 1
+
+    // 递推计算后续元素
+    for (let k = 1; k <= rowIndex; k++) {
+        // 使用递推公式避免阶乘溢出
+        row.push(row[k - 1] * (rowIndex - k + 1) / k);
+    }
+
+    return row;
+}
 export { };
