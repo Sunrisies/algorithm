@@ -19,15 +19,13 @@
 
 function missingNumber(nums: number[]): number {
     // 判断一个数组是否是正常自增的
-    const n = nums.length
-    if (n === 1) return nums[0] === 0 ? 1 : 0
-    nums.sort((a, b) => a - b)
-    for (let i = 0; i < n - 1; i++) {
-        if (nums[i + 1] - nums[i] > 1) {
-            return nums[i] + 1
+    const len = nums.length;
+    for (let i = 0; i <= len; i++) {
+        if (nums.indexOf(i) == -1) {
+            return i;
         }
     }
-    return n
+    return -1
 };
 console.log(missingNumber([3, 0, 1])); // 2
 console.log(missingNumber([0, 1])); // 2
@@ -36,3 +34,10 @@ console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); // 8
 console.log(missingNumber([0])); // 1
 console.log(missingNumber([1])); // 0
 console.log(missingNumber([1, 2])); // 1
+// 数学求和法
+function missingNumber2(nums: number[]): number {
+    const n = nums.length
+    const sum = (n * (n + 1)) / 2
+    const sum2 = nums.reduce((acc, cur) => acc + cur, 0)
+    return sum - sum2
+}
