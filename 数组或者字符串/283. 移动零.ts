@@ -13,9 +13,8 @@
     
  */
 function moveZeroes(nums: number[]): void {
-    for (let i = 0; i < nums.length; i++) {
+    for (let i = nums.length - 1; i >= 0; i--) {
         if (nums[i] === 0) {
-            console.log(nums[i], i);
             nums.splice(i, 1);
             nums.push(0);
         }
